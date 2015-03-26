@@ -71,6 +71,7 @@ namespace COMP100_theDragon
                         break;
                     case 3:
                         Console.WriteLine(); // Exit
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.WriteLine();
