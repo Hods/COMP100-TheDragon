@@ -64,10 +64,10 @@ namespace COMP100_theDragon
                 switch (selection)
                 {
                     case 1: // Cave 1 - Player Dies
-                        bodyText = Cave1(bodyText);
+                        Cave1();
                         break;
                     case 2: // Cave 2 - Player Lives
-                        bodyText = Cave2(bodyText);
+                        Cave2();
                         break;
                     case 3:
                         Console.WriteLine(); // Exit
@@ -85,41 +85,11 @@ namespace COMP100_theDragon
             }
         }
 
-        // Positive Outcome 1 - Player Lives - WIN
-        private static string Cave2(string bodyText)
-        {
-            bodyText = "You approach the cave, it is bright and cheerful.\n";
-            bodyText += "A large white dragon approaches you...\n\n";
-            bodyText += "And... \n\n... gives you his treasure!\n";
-            Console.ResetColor();
-            Console.WriteLine(bodyText);
-            Thread.Sleep(5000);
-
-            bodyText = ".......... .M?78IIIIIIIII77M?. .........\n";
-            bodyText += ".......... MMMMII.+?I,7=??MMMMMM........\n";
-            bodyText += ".......... ..MMM=??OMMMMMM.MOMMM7.......\n";
-            bodyText += "......... .... MMOZ.=,Z,Z.ZMMMMMM.......\n";
-            bodyText += "...............MM+?M?MM??MMMZIMM........\n";
-            bodyText += "............M?MMM.MMI+ID~?,Z8MI.........\n";
-            bodyText += "..........MIM??ZZ?7?~M,MMM?IINI.........\n";
-            bodyText += "..........??IIIIMMIIIZ$MII7IM7Z.........\n";
-            bodyText += "..........?=IIIIIMNMZMM7MMIM7MN ........\n";
-            bodyText += "..........?+IMMIIIIII=I?MMIMMIM ........\n";
-            bodyText += "..... .NM I+IIIIIIIII?I+MMMZ8MM.........\n";
-            bodyText += "8 .D?M.?M.I7MMIIIII7M+IIMDMMM??..M?+....\n";
-            bodyText += ".......  ..+?M?MM7III7DZMMMM.~NMM....   \n";
-            bodyText += "...........:M. MMM.I??+MM.M+?MMM,.......\n";
-            bodyText += "......MMM....DM...??M...M?.MD..:M.......\n";
-            bodyText += "....................... ....... .......\n";
-            Console.ForegroundColor = System.ConsoleColor.Green;
-            Console.WriteLine(bodyText);
-            WaitForKey();
-            return bodyText;
-        }
 
         // Negative Outcome 1 - Player Dies - LOSS
-        private static string Cave1(string bodyText)
+        private static void Cave1()
         {
+            string bodyText = "";
             Console.Clear();
             bodyText = "You approach the cave, it is dark and spooky.\n";
             bodyText += "A large red dragon jumps out in front of you!\n";
@@ -152,8 +122,42 @@ namespace COMP100_theDragon
             Console.ForegroundColor = System.ConsoleColor.Red;
             Console.WriteLine(bodyText);
             WaitForKey();
-            return bodyText;
         }
+
+
+        // Positive Outcome 1 - Player Lives - WIN
+        private static void Cave2()
+        {
+            string bodyText = "";
+            bodyText = "You approach the cave, it is bright and cheerful.\n";
+            bodyText += "A large white dragon approaches you...\n\n";
+            bodyText += "And... \n\n... gives you his treasure!\n";
+            Console.ResetColor();
+            Console.WriteLine(bodyText);
+            Thread.Sleep(5000);
+
+            bodyText = ".......... .M?78IIIIIIIII77M?. .........\n";
+            bodyText += ".......... MMMMII.+?I,7=??MMMMMM........\n";
+            bodyText += ".......... ..MMM=??OMMMMMM.MOMMM7.......\n";
+            bodyText += "......... .... MMOZ.=,Z,Z.ZMMMMMM.......\n";
+            bodyText += "...............MM+?M?MM??MMMZIMM........\n";
+            bodyText += "............M?MMM.MMI+ID~?,Z8MI.........\n";
+            bodyText += "..........MIM??ZZ?7?~M,MMM?IINI.........\n";
+            bodyText += "..........??IIIIMMIIIZ$MII7IM7Z.........\n";
+            bodyText += "..........?=IIIIIMNMZMM7MMIM7MN ........\n";
+            bodyText += "..........?+IMMIIIIII=I?MMIMMIM ........\n";
+            bodyText += "..... .NM I+IIIIIIIII?I+MMMZ8MM.........\n";
+            bodyText += "8 .D?M.?M.I7MMIIIII7M+IIMDMMM??..M?+....\n";
+            bodyText += ".......  ..+?M?MM7III7DZMMMM.~NMM....   \n";
+            bodyText += "...........:M. MMM.I??+MM.M+?MMM,.......\n";
+            bodyText += "......MMM....DM...??M...M?.MD..:M.......\n";
+            bodyText += "....................... ....... .......\n";
+            Console.ForegroundColor = System.ConsoleColor.Green;
+            Console.WriteLine(bodyText);
+            WaitForKey();
+        }
+
+        
         
     }
 }
